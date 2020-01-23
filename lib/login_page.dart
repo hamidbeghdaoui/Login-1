@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
       Color.fromARGB(255, 240, 92, 1),
       Color.fromARGB(255, 241, 138, 0)
     ];
-    _FunTextField(BuildContext context) {
+    _FunBody (BuildContext context) {
       return <Widget>[
         SizedBox(
           height: 15,
@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))),
           child: TextField(
-              style: new TextStyle(fontSize: 18.0, color: Color(0xFFbdc6cf)),
+              style: new TextStyle(fontSize: 18.0, color: Colors.blueGrey),
               decoration: new InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
@@ -32,6 +32,7 @@ class LoginPage extends StatelessWidget {
                 prefixIcon: Icon(
                   Icons.email,
                   color: Colors.blueGrey,
+                  size: 20,
                 ),
               )),
         ),
@@ -43,7 +44,8 @@ class LoginPage extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))),
           child: TextField(
-              style: new TextStyle(fontSize: 18.0, color: Color(0xFFbdc6cf)),
+              obscureText: true,
+              style: new TextStyle(fontSize: 18.0, color: Colors.blueGrey),
               decoration: new InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
@@ -57,6 +59,7 @@ class LoginPage extends StatelessWidget {
                 prefixIcon: Icon(
                   Icons.vpn_key,
                   color: Colors.blueGrey,
+                  size: 20,
                 ),
               )),
         ),
@@ -64,37 +67,44 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 25),
           child: Align(
             alignment: Alignment.centerRight,
-            child: Text(
-              "Forgot password ?",
-              style: TextStyle(fontSize: 12, color: Colors.blueGrey),
+            child: GestureDetector(
+              onTap: (){},
+                          child: Text(
+                "Forgot password ?",
+                style: TextStyle(fontSize: 12, color: Colors.blueGrey),
+              ),
             ),
           ),
         ),
         SizedBox(
           height: 40,
         ),
-        Container(
-            height: 50,
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: ListColor,
-                    begin: Alignment.bottomRight,
-                    end: Alignment.topLeft),
-                borderRadius: BorderRadius.all(Radius.circular(110))),
-            child: Center(
-              child: Text("LOGIN" ,style: TextStyle(
-                color: Colors.white,
-                fontSize: 17
-              ),),
-            )),
+        GestureDetector(
+          onTap: (){},
+                  child: Container(
+              height: 50,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: ListColor,
+                      begin: Alignment.bottomRight,
+                      end: Alignment.topLeft),
+                  borderRadius: BorderRadius.all(Radius.circular(110))),
+              child: Center(
+                child: Text("LOGIN" ,style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17
+                ),),
+              )),
+        ),
             
         SizedBox(
           height: 12,
-        ),
-        Align(
-          alignment: Alignment.center,
-          child: Text("Don't have account ?" ,style: TextStyle(color: Colors.blueGrey),),
-        )
+        ),Align(
+            alignment: Alignment.center,
+            child: GestureDetector(
+              onTap: (),
+              child: Text("Don't have account ?" ,style: TextStyle(color: Colors.blueGrey),)),
+          ),
       ];
     }
 
@@ -138,7 +148,7 @@ class LoginPage extends StatelessWidget {
           Container(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(children: _FunTextField(context)),
+              child: Column(children: _FunBody(context)),
             ),
           )
         ],
